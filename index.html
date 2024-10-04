@@ -1,18 +1,84 @@
+Aquí te dejo el código actualizado:
+
+
+```
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Azura - Servidor Minecraft</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="favicon.png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 1em;
+      text-align: center;
+      border-bottom: 1px solid #444;
+    }
+    
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    nav li {
+      margin-right: 20px;
+    }
+    
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    
+    nav a:hover {
+      color: #ccc;
+    }
+    
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2em;
+    }
+    
+    section {
+      background-color: #fff;
+      padding: 1em;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+    
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    
+    h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
   <header>
     <nav>
       <ul>
         <li><a href="#informacion">Información</a></li>
-        <li><a href="#nuestro-equipo">Nuestro Equipo</a></li>
+        <li><a href="#equipo">Nuestro Equipo</a></li>
         <li><a href="#reglas">Reglas</a></li>
         <li><a href="#soporte">Soporte</a></li>
       </ul>
@@ -22,20 +88,23 @@
     <section id="informacion">
       <h1>Bienvenido a Azura</h1>
       <p>Servidor Minecraft con la mejor comunidad</p>
-      <p>IP: Azura.mc-world.xyz</p>
-      <p>Puerto: 10294</p>
-      <p>Version: 0.15.10</p>
+      <div>
+        <p>IP: <input type="text" value="Azura.mc-world.xyz" id="ip" readonly></p>
+        <p>Puerto: <input type="text" value="10294" id="puerto" readonly></p>
+        <p>Version: 0.15.10</p>
+        <button onclick="copiarDatos()">Copiar IP y Puerto</button>
+      </div>
     </section>
-    <section id="nuestro-equipo">
+    <section id="equipo">
       <h2>Nuestro Equipo</h2>
       <ul>
         <li>
-          <span>Administrador</span>
-          <span>Nombre del administrador</span>
+          <h3>Administrador</h3>
+          <p>Nombre del administrador</p>
         </li>
         <li>
-          <span>Moderador</span>
-          <span>Nombre del moderador</span>
+          <h3>Moderador</h3>
+          <p>Nombre del moderador</p>
         </li>
       </ul>
     </section>
@@ -49,12 +118,22 @@
     </section>
     <section id="soporte">
       <h2>Soporte</h2>
-      <p>Díscord : Darke_MC</p>
-      <p>YouTube : @zBr3yan_MC</p>
+      <p>Díscord: Darke_MC</p>
+      <p>YouTube: @zBr3yan_MC</p>
     </section>
   </main>
   <footer>
     <p>&copy; 2024 Azura. Todos los derechos reservados.</p>
   </footer>
+  <script>
+    function copiarDatos() {
+      var ip = document.getElementById("ip").value;
+      var puerto = document.getElementById("puerto").value;
+      var datos = ip + ":" + puerto;
+      navigator.clipboard.writeText(datos);
+      alert("IP y Puerto copiados al portapapeles");
+    }
+  </script>
 </body>
 </html>
+```
