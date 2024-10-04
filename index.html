@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -78,6 +77,7 @@
         <li><a href="#equipo">Nuestro Equipo</a></li>
         <li><a href="#reglas">Reglas</a></li>
         <li><a href="#soporte">Soporte</a></li>
+        <li><a href="#publicaciones">Publicaciones</a></li>
       </ul>
     </nav>
   </header>
@@ -118,6 +118,12 @@
       <p>Díscord:Darke_MC</p>
       <p>YouTube:@zBr3yan_MC</p>
     </section>
+    <section id="publicaciones">
+      <h2>Publicaciones</h2>
+      <textarea id="publicacion" placeholder="Escribe tu publicación"></textarea>
+      <button onclick="publicar()">Publicar</button>
+      <div id="publicaciones-lista"></div>
+    </section>
   </main>
   <footer>
     <p>&copy; 2024 Azura. Todos los derechos reservados.</p>
@@ -129,8 +135,3 @@
       var datos = ip + ":" + puerto;
       navigator.clipboard.writeText(datos);
       alert("IP y Puerto copiados al portapapeles");
-    }
-  </script>
-</body>
-</html>
-```
