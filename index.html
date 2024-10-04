@@ -132,4 +132,7 @@
     function copiarDatos() {
       var ip = document.getElementById("ip").value;
       var puerto = document.getElementById("puerto").value;
-      var datos = ip
+      var datos = ip + ":" + puerto;
+      navigator.clipboard.writeText(datos);
+      alert("IP y puerto copiado");
+}
